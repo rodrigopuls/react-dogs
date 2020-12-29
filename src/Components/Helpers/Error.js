@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Error = ({ message }) => {
-  if (!message) return null;
-  return <p className="error">{message}</p>;
+const Error = ({ error }) => {
+  if (!error) return null;
+  return <p className="error">{error}</p>;
 };
 
 export default Error;
