@@ -9,6 +9,10 @@ const types = {
     regex: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
     message: 'Password is too weak.',
   },
+  number: {
+    regex: /^\d+$/,
+    message: 'Not a integer.',
+  },
 };
 
 const useForm = (type) => {

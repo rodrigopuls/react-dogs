@@ -12,22 +12,24 @@ import { UserStorage } from './UserContext';
 
 function App() {
   return (
-    <>
+    <div className="App">
       <BrowserRouter>
         <UserStorage>
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="login/*" element={<Login />} />
-            <ProtectedRoute path="account/*" element={<User />} />
-            <Route path="*">
-              <div>404 - Not Found</div>
-            </Route>
-          </Routes>
+          <main className="AppBody">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="login/*" element={<Login />} />
+              <ProtectedRoute path="account/*" element={<User />} />
+              <Route path="*">
+                <div>404 - Not Found</div>
+              </Route>
+            </Routes>
+          </main>
           <Footer />
         </UserStorage>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
