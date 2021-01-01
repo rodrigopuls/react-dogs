@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 
-.item img {
+.item > div {
   grid-area: 1/1;
 }
 
