@@ -7,7 +7,7 @@ import { PHOTOS_GET } from '../../ApiHelper';
 import styles from './FeedPhotos.module.css';
 
 const FeedPhotos = ({
-  userId,
+  user,
   page,
   itemsPerPage,
   setModalPhotoItem,
@@ -19,7 +19,7 @@ const FeedPhotos = ({
       const { url, options } = PHOTOS_GET({
         page: page,
         total: itemsPerPage,
-        user: userId,
+        user: user,
       });
       const { response, json } = await request(url, options);
       if (response && response.ok && json.length < itemsPerPage)
@@ -27,7 +27,7 @@ const FeedPhotos = ({
     }
 
     fetchPhotos();
-  }, [request, userId, page, itemsPerPage, setInfiniteScroll]);
+  }, [request, user, page, itemsPerPage, setInfiniteScroll]);
 
   if (error) return <Error error={error} />;
   if (loading) return <Loading />;

@@ -7,6 +7,7 @@ import { USER_POST } from '../../ApiHelper';
 import useForm from '../../Hooks/useForm';
 import { UserContext } from '../../UserContext';
 import useFetch from '../../Hooks/useFetch';
+import Head from '../Helpers/Head';
 
 const LoginCreate = () => {
   const username = useForm();
@@ -32,10 +33,11 @@ const LoginCreate = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="Create Account" />
       <h1 className="title">Create Account</h1>
       <form onSubmit={handleSubmit}>
         <Input label="Username" type="text" name="username" {...username} />
-        <Input label="Email" type="text" name="email" {...email} />
+        <Input label="Email" type="email" name="email" {...email} />
         <Input label="Password" type="password" name="password" {...password} />
 
         {loading ? (
