@@ -134,3 +134,15 @@ export function RESET_PASSWORD_POST(body) {
     },
   };
 }
+
+export function STATS_GET(token) {
+  return {
+    url: `${API_URL}/api/stats`,
+    options: {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  };
+}
